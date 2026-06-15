@@ -18,5 +18,8 @@ class Carteira:
         else:
             Valor_Convertido = valor_yuan
         return self.saldo - Valor_Convertido
+carteira_usd = Carteira("USD", 10.0)
+print('Soma de carteira USD + 50 yuan = ', carteira_usd + 50.0) 
+
 
 
