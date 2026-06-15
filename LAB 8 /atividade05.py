@@ -3,4 +3,8 @@ class Onibus:
     self.placa = placa
     self.nome_motorista = nome
     self.num_assentos = assentos
-    
+  def __len__ ()
+  def __getitem__()
+  def __setitem__()
+  def __str__()
+  
