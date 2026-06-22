@@ -30,6 +30,28 @@ class Mago(Personagem):
         self.mana = self.mana / valor
         return self.mana
 class Barbaro(Personagem):
+  def __init__(self, nome: str, vida: int,  stamina: float, furia: bool):
+    super().__init__(nome, vida)
+    self.stamina = stamina
+    self.furia = furia
+  def __str__(self):
+    return f"Bárbaro: {self.nome} | {self.vida} | stamina: {self.stamina} | furia: {self.furia}"
+  def __add__(self, valor):
+      self.furia = self.furia + valor
+      return self.furia
+  def __sub__(self, valor: float): 
+    self.stamina = self.stamina - valor 
+    if self.stamina == 0 and self.furia == false:
+      self.furia == true 
+      self.stamina = 5 
+      print("🔥 O guerreiro entrou em FÚRIA! Stamina subiu para 5.")
+    return self.stamina
+  def __mul__(self, fator: float):
+    self.furia = self.furia * fator
+    return self.furia
+  def __truediv__(self, valor: float):  
+
+    
   
 
 
