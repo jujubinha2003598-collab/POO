@@ -44,20 +44,16 @@ class Barbaro(Personagem):
     if self.stamina == 0 and self.furia == false:
       self.furia == true 
       self.stamina = 5 
-      print("🔥 O guerreiro entrou em FÚRIA! Stamina subiu para 5.")
+      print("O guerreiro entrou em FÚRIA! Stamina subiu para 5.0")
     return self.stamina
   def __mul__(self, fator: float):
     self.furia = self.furia * fator
     return self.furia
-  def __truediv__(self, valor: float):  
-
-    
-  
-
-
-
-
-
+  def __truediv__(self, valor):
+    self.furia = self.furia / valor
+    if valor == 0:
+      print("Error: Não dá para dividir por zero!")
+    return self.furia
 
 print("=== CRIAR PERSONAGEM ===")
 nome_usuario = input("Qual o nome do personagem? ")
@@ -71,24 +67,41 @@ else:
     jogador = Barbaro(nome_usuario, vida_usuario, furia_usuario)
 
 print("Personagem criado!")
-
-
-
-
-
-
-
-
-#gandalf = Mago("Gandalf", 100, 50.0)
-#print(gandalf)  
-#gandalf.tomar_dano(20)
-#gandalf + 25.0   
-#print(gandalf)  
-#gandalf - 80.0  
-#print(gandalf)  
-#gandalf + 10.0
-#gandalf * 3.0   
-#gandalf / 2.0   
-#print(gandalf)
-
+while jogador.vida > 0:
+    print(jogador) 
     
+    print("O que você quer fazer?")
+    print("1 - Tomar poção simples")
+    print("2 - Tomar poção especial")
+    print("3 - Usar ataque básico")
+    print("4 - Usar ataque especial")
+    print("5 - Sair do jogo")
+    opcao = input("Escolha o número da opção: ")
+    if opcao == "1":
+        jogador + 5
+        print("Você tomou a poção simples! (+5)")
+    elif opcao == "2":
+        jogador * 1.5
+        print("Você tomou a poção especial! (*1.5)")
+    elif opcao == "3":
+        jogador - 2
+        print("Você usou o ataque básico! (-2)")
+    elif opcao == "4":
+        jogador / 2
+        print("Você usou o ataque especial! (/2)")
+    elif opcao == "5":
+        print("Você saiu do jogo.")
+        break
+    else:
+        print("Opção inválida!")
+    dano_do_monstro = random.randint(1, 10)
+    jogador.tomar_dano(dano_do_monstro)
+      rint("Um monstro te atacou e tirou " + str(dano_do_monstro) + " de vida!")
+if jogador.vida <= 0:
+    print("\nSua vida acabou... Fim de jogo!")
+
+
+
+
+
+
