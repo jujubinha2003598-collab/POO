@@ -41,6 +41,14 @@ print("=== CRIAR PERSONAGEM ===")
 nome_usuario = input("Qual o nome do personagem? ")
 vida_usuario = int(input("Quanta vida ele vai ter? "))
 tipo_classe = input("Escolha a classe (Mago ou Barbaro): ")
+if tipo_classe == "mago" or tipo_classe == "Mago":
+  mana_usuario = float(input("Quanta mana inicial? "))
+    jogador = Mago(nome_usuario, vida_usuario, mana_usuario)
+else:
+    furia_usuario = float(input("Quanta fúria inicial? "))
+    jogador = Barbaro(nome_usuario, vida_usuario, furia_usuario)
+
+print("Personagem criado!")
 
 
 
